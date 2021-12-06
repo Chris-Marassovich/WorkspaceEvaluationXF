@@ -1,5 +1,6 @@
 ﻿using System;
 using WorkspaceEvaluationXF.Services;
+using WorkspaceEvaluationXF.ViewModels;
 using WorkspaceEvaluationXF.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,6 +15,7 @@ namespace WorkspaceEvaluationXF
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
+            DependencyService.RegisterSingleton(new AppShellViewModel());
             MainPage = new AppShell();
         }
 

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:WorkspaceEvaluationXF.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.IsSmoothScrollEnabled="False"
+            x:Class="WorkspaceEvaluationXF.Views.XFTabbedPage"
+            x:Name="MyTabbedPage"
+            Title="XF Workspace Tab Page">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"
+                     Clicked="ToolbarItem_Clicked" />
+    </TabbedPage.ToolbarItems>
+    <!--Pages can be added as references or inline-->
+  <local:XFTabPage1 />
+  <local:XFTab2TabbedPage />
+  <ContentPage Title="Tab 3" />
+</TabbedPage>

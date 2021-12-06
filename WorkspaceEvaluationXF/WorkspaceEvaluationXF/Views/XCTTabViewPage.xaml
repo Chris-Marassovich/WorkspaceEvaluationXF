@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="WorkspaceEvaluationXF.Views.XCTTabViewPage"
+             Title="XCT Workspace Tab">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"
+                     Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <!-- 
+    Nesting works nicely at design time.
+    I have looked into doing it from code by adding to the TabView collections and it does not work well.
+    I cannot see either how to do nesting if using ItemSource.
+    I have observed on github that there is a lot of open (year or more) issues around this topic.
+    -->
+    <ContentPage.Content>
+        <Grid>
+            <xct:TabView TabStripPlacement="Bottom"
+                         TabStripBackgroundColor="CornflowerBlue"
+                         TabIndicatorColor="Yellow"
+                         x:Name="WorkspaceTabView">
+                <xct:TabViewItem Text="Workspace 1">
+                    <Grid>
+                        <Label Text="Workspace 1 page 1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </xct:TabViewItem>
+                <xct:TabViewItem Text="Workspace 2">
+                    <xct:TabView TabStripPlacement="Top"
+                                 TabStripBackgroundColor="YellowGreen"
+                                 TabIndicatorColor="Red">
+                        <xct:TabViewItem Text="Page 1">
+                            <Label Text="Workspace 2 page 1"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </xct:TabViewItem>
+                        <xct:TabViewItem Text="Page 2">
+                            <Label Text="Workspace 2 page 2"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </xct:TabViewItem>
+                    </xct:TabView>
+                </xct:TabViewItem>
+                <xct:TabViewItem Text="Workspace 3">
+                    <Grid>
+                        <Label Text="Workspace 3 page 1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </xct:TabViewItem>
+            </xct:TabView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

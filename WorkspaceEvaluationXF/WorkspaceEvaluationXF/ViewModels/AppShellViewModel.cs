@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,17 +75,28 @@ namespace WorkspaceEvaluationXF.ViewModels
             ///I cannot see either how to do nesting if using ItemSource.
             ///I have observed on github that there is a lot of open(year or more) issues around this topic.
            IsBusy = true;
-            tabView.TabItems.Clear();
 
-            tabView.TabItems.Add(new TabViewItem()
-            {
-                Text = "Workspace 1",
-            });
+            //tabView.TabItems.Clear();
 
-            tabView.TabItems.Add(new TabViewItem()
+            //tabView.TabItems.Add(new TabViewItem()
+            //{
+            //    Text = "Workspace 1",
+            //});
+
+            //tabView.TabItems.Add(new TabViewItem()
+            //{
+            //    Text = "Workspace 3",
+            //});
+
+            //Dynamic changes via itemsource is OK but there is a little tab selection issue first time after rebuild.
+            ObservableCollection<dsWorkspace> workspaces = new ObservableCollection<dsWorkspace>()
             {
-                Text = "Workspace 3",
-            });
+                new dsWorkspace(){ Title = "Workspace 1", Pages = new List<dsWorkspacePage>(){ new dsWorkspacePage() { Title = "Page 1"} }},
+                new dsWorkspace(){ Title = "Workspace 2", Pages = new List<dsWorkspacePage>(){ new dsWorkspacePage() { Title = "Page 1"} }},
+            };
+
+            tabView.TabItemsSource = workspaces;
+
             IsBusy = false;
         }
 

@@ -8,6 +8,27 @@
         <ToolbarItem Text="Refresh"
                      Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="TabViewItemTemplate">
+                <Grid>
+                    <Label Text="{Binding Title}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"
+                           Margin="12, 0" />
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate x:Key="TabContentTemplate">
+                <StackLayout>
+                    <Label Text="{Binding Title}"
+                           FontSize="Title"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <!-- 
     Nesting works nicely at design time.
     I have looked into doing it from code by adding to the TabView collections and it does not work well.
@@ -19,8 +40,15 @@
             <xct:TabView TabStripPlacement="Bottom"
                          TabStripBackgroundColor="CornflowerBlue"
                          TabIndicatorColor="Yellow"
+                         x:Name="WorkspaceTabView"
+                         TabViewItemDataTemplate="{StaticResource TabViewItemTemplate}"
+                         TabContentDataTemplate="{StaticResource TabContentTemplate}">
+            </xct:TabView>
+            <!--<xct:TabView TabStripPlacement="Bottom"
+                         TabStripBackgroundColor="CornflowerBlue"
+                         TabIndicatorColor="Yellow"
                          x:Name="WorkspaceTabView">
-                <xct:TabViewItem Text="Workspace 1">
+                <xct:TabViewItem Text="Workspace 1" Margin="5,0">
                     <Grid>
                         <Label Text="Workspace 1 page 1"
                                HorizontalOptions="Center"
@@ -50,7 +78,28 @@
                                VerticalOptions="Center" />
                     </Grid>
                 </xct:TabViewItem>
-            </xct:TabView>
+                <xct:TabViewItem Text="Workspace 4">
+                    <Grid>
+                        <Label Text="Workspace 4 page 1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </xct:TabViewItem>
+                <xct:TabViewItem Text="Workspace 5">
+                    <Grid>
+                        <Label Text="Workspace 5 page 1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </xct:TabViewItem>
+                <xct:TabViewItem Text="Workspace 6">
+                    <Grid>
+                        <Label Text="Workspace 6 page 1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </xct:TabViewItem>
+            </xct:TabView>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

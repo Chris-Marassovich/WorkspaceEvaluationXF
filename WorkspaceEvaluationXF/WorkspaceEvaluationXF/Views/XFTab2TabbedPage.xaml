@@ -2,8 +2,6 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:WorkspaceEvaluationXF.Views"
-            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-            android:TabbedPage.IsSmoothScrollEnabled="False"
             x:Class="WorkspaceEvaluationXF.Views.XFTab2TabbedPage"
             Title="Tab 2 Tabbed">
   <!--Pages can be added as references or inline-->

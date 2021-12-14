@@ -6,7 +6,8 @@
        x:DataType="vm:AppShellViewModel"
        Title="WorkspaceEvaluationXF"
        IsBusy="{Binding IsBusy}"
-       x:Class="WorkspaceEvaluationXF.AppShell">
+       x:Class="WorkspaceEvaluationXF.AppShell"
+       x:Name="MyAppShell">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -94,6 +95,27 @@
         <ShellContent Title="XF Workspace Tab Page"
                       ContentTemplate="{DataTemplate local:XFTabbedPage}" />
     </FlyoutItem>
+
+    <FlyoutItem Title="Workspace">
+            <ShellContent Title="Page 1"
+                          ContentTemplate="{DataTemplate local:BlankPage}" />
+            <ShellContent Title="Page 2"
+                          ContentTemplate="{DataTemplate local:BlankPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Workspace 2">
+            <ShellContent Title="WS 2"
+                          ContentTemplate="{DataTemplate local:BlankPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Workspace A">
+        <Tab Title="Tab">
+            <ShellContent Title="Page 1"
+                          ContentTemplate="{DataTemplate local:BlankPage}" />
+            <ShellContent Title="Page 2"
+                          ContentTemplate="{DataTemplate local:BlankPage}" />
+        </Tab>
+    </FlyoutItem>
+
     <FlyoutItem Title="Workspaces"
                 Route="workspaces"
                 FlyoutDisplayOptions="AsMultipleItems"

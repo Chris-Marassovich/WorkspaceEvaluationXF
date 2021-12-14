@@ -38,7 +38,6 @@ namespace WorkspaceEvaluationXF
             Shell.Current.FlyoutIsPresented = false;
 
             ViewModel.BuildWorkspaceMenu(WorkspaceFlyoutItem, IsNeat: false);
-
         }
     }
 }
